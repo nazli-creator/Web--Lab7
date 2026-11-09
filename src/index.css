@@ -1,0 +1,71 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, sans-serif; }
+
+.app {
+  --bg: #ffffff;
+  --text: #1a1a1a;
+  --card: #f4f4f6;
+  --border: #d0d0d6;
+  --accent: #2563eb;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--text);
+}
+.app.dark {
+  --bg: #121212;
+  --text: #f0f0f0;
+  --card: #1e1e22;
+  --border: #3a3a42;
+  --accent: #60a5fa;
+}
+
+a { color: var(--accent); }
+button, input, select {
+  font: inherit;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--card);
+  color: var(--text);
+}
+button { cursor: pointer; }
+button:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 12px 24px;
+  border-bottom: 1px solid var(--border);
+  background: var(--card);
+}
+.brand { font-weight: bold; }
+.nav-links { display: flex; gap: 12px; flex: 1; }
+.nav-right { display: flex; align-items: center; gap: 10px; }
+.nav-link { text-decoration: none; color: var(--text); padding: 4px 8px; border-radius: 6px; }
+.nav-link.active { background: var(--accent); color: #fff; font-weight: bold; }
+
+.content { flex: 1; padding: 24px; max-width: 1100px; width: 100%; margin: 0 auto; }
+.footer { text-align: center; padding: 16px; border-top: 1px solid var(--border); background: var(--card); }
+
+.filters { display: flex; gap: 10px; margin-bottom: 16px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 12px; }
+.card img { width: 100%; height: 150px; object-fit: contain; }
+.category { opacity: 0.7; text-transform: capitalize; }
+.price { font-weight: bold; }
+.error { color: #dc2626; }
+
+.detail { display: flex; gap: 24px; flex-wrap: wrap; }
+.detail img { width: 280px; max-width: 100%; }
+
+.form { display: flex; flex-direction: column; gap: 12px; max-width: 320px; }
+.form label { display: flex; flex-direction: column; gap: 4px; }
+
+.cart-list { list-style: none; padding: 0; }
+.cart-list li { display: flex; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--border); }
+.cart-title { flex: 1; }
+.total { font-size: 1.2rem; font-weight: bold; }
